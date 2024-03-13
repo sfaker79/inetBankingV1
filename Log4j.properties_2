@@ -1,0 +1,36 @@
+# Generic definitions
+log4j.rootLogger=INFO, console, file, err
+com.citizeninventor=DEBUG
+
+# Console logger
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=[%d{dd.MM.yy HH:mm:ss}] [%t] %-5p %c %x - %m%n
+
+# File appender logger, generic
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.conversionPattern=[%d{dd.MM.yy HH:mm:ss}] [%t] %-5p %c %x - %m%n
+log4j.appender.file.File=log/app.log
+log4j.appender.file.MaxFileSize=5MB
+log4j.appender.file.MaxBackupIndex=10
+
+# File appender logger for Errors only
+log4j.appender.err=org.apache.log4j.RollingFileAppender
+log4j.appender.err.layout=org.apache.log4j.PatternLayout
+log4j.appender.err.layout.conversionPattern=[%d{dd.MM.yy HH:mm:ss}] [%t] %-5p %c %x - %m%n
+log4j.appender.err.File=log/error.log
+log4j.appender.err.MaxFileSize=5MB
+log4j.appender.err.MaxBackupIndex=10
+log4j.appender.err.Threshold=ERROR
+
+# File appender logger for performance monitoring
+log4j.logger.perf=DEBUG, perf
+log4j.additivity.perf=false
+
+log4j.appender.perf=org.apache.log4j.RollingFileAppender
+log4j.appender.perf.layout=org.apache.log4j.PatternLayout
+log4j.appender.perf.layout.conversionPattern=[%d{dd.MM.yy HH:mm:ss}] [%t] %-5p %c %x - %m%n
+log4j.appender.perf.File=log/perf.log
+log4j.appender.perf.MaxFileSize=5MB
+log4j.appender.perf.MaxBackupIndex=5

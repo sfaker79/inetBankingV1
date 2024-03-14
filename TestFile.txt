@@ -1,1 +1,1 @@
-this is a file for test pull from remote reposotory
+this is a file for test pull from remote repository
